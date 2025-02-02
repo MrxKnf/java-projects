@@ -54,7 +54,7 @@ public class TaskHandler {
         Task task = new Task(status,description);
 
         if (!tasks.isEmpty()){
-            task.id = JsonConverter.convertFromJson(tasks.get(tasks.size()-1)).id + 1;
+            task.id = JsonConverter.convertFromJson(tasks.getLast()).id + 1;
         }
 
         tasks.add(JsonConverter.convertToJson(task));
