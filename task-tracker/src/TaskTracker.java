@@ -60,6 +60,7 @@ public class TaskTracker {
                     } else{
                         TaskHandler.listAllTasks();
                     }
+                    break;
                 default:
                     System.out.println("Unrecognized command.\n");
                     System.out.println("Usage:");
