@@ -10,14 +10,14 @@ ___
 Through the following command, clone the repository:
 
 ```
-git clone https://github.com/MrxKnf/java-projects/task-tracker.git
+git clone https://github.com/MrxKnf/java-projects.git
 ```
 
 Enter source code directory and run the following commands:
 
 ```
-cd task-tracker/src
-javac Task-tracker.java
+cd java-projects/task-tracker/src
+javac TaskTracker.java
 ```
 
 ### How to use the program
@@ -25,23 +25,23 @@ ___
 
 ```
 # Add a task
-Task-tracker add Do the housework
+TaskTracker add Do the housework
 
 # Update a task
-Task-tracker update 1 Do the housework and cook dinner
+TaskTracker update 1 Do the housework and cook dinner
 
 # Delete a task
-Task-tracker delete 1
+TaskTracker delete 1
 
 # Mark a task as in progress | done | todo
-Task-tracker mark-in-progress 1
-Task-tracker mark-done 1
-Task-tracker mark-todo 1
+TaskTracker mark-in-progress 1
+TaskTracker mark-done 1
+TaskTracker mark-todo 1
 
 # List all | todo | in progress | done tasks
-Task-tracker list //List all tasks
-Task-tracker list todo
-Task-tracker list in-progress
-Task-tracker list done
+TaskTracker list //List all tasks
+TaskTracker list todo
+TaskTracker list in-progress
+TaskTracker list done
 ```
 
