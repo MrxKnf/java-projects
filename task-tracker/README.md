@@ -2,7 +2,9 @@
 
 ___
 
-Solution for the task-tracker-cli [https://roadmap.sh/projects/task-tracker](https://roadmap.sh/projects/task-tracker) project from [roadmap.sh](https://roadmap.sh)
+Solution for the task-tracker-cli project from [roadmap.sh](https://roadmap.sh)
+
+[https://roadmap.sh/projects/task-tracker](https://roadmap.sh/projects/task-tracker)
 
 ### How to run the program
 ___
