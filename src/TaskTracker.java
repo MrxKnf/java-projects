@@ -1,4 +1,4 @@
-public class Main {
+public class TaskTracker {
     public static void main(String[] args) {
         if (args.length > 0){
             switch (args[0]){
