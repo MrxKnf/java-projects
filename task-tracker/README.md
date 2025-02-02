@@ -25,23 +25,23 @@ ___
 
 ```
 # Add a task
-TaskTracker add Do the housework
+java TaskTracker add Do the housework
 
 # Update a task
-TaskTracker update 1 Do the housework and cook dinner
+java TaskTracker update 1 Do the housework and cook dinner
 
 # Delete a task
-TaskTracker delete 1
+java TaskTracker delete 1
 
 # Mark a task as in progress | done | todo
-TaskTracker mark-in-progress 1
-TaskTracker mark-done 1
-TaskTracker mark-todo 1
+java TaskTracker mark-in-progress 1
+java TaskTracker mark-done 1
+java TaskTracker mark-todo 1
 
 # List all | todo | in progress | done tasks
-TaskTracker list //List all tasks
-TaskTracker list todo
-TaskTracker list in-progress
-TaskTracker list done
+java TaskTracker list //List all tasks
+java TaskTracker list todo
+java TaskTracker list in-progress
+java TaskTracker list done
 ```
 
