@@ -25,6 +25,12 @@ public class TaskHandler {
 
     public static void storageTasks() throws IOException{
         StringBuilder sb = new StringBuilder();
+
+        if (tasks.isEmpty()){
+            Files.writeString(TASKS_FILE,"");
+            return;
+        }
+
         sb.append("[");
         for (int i = 0; i < tasks.size(); i++) {
             if (i == tasks.size() - 1){
