@@ -6,7 +6,7 @@ public class TaskTracker {
                     try{
                         TaskHandler.addTask(0,args[1]);
                     } catch (IndexOutOfBoundsException e) {
-                        System.out.println("Usage: task-tracker add [description]");
+                        System.out.println("Usage: task-tracker add [\"description\"]");
                     }
                     break;
 
@@ -14,7 +14,7 @@ public class TaskTracker {
                     try{
                        TaskHandler.updateTask(Integer.parseInt(args[1]),args[2]);
                     } catch (IndexOutOfBoundsException e){
-                        System.out.println("Usage: task-tracker update [id] [new_description]");
+                        System.out.println("Usage: task-tracker update [id] [\"new_description\"]");
                     }
                     break;
                 case "delete":
@@ -64,8 +64,8 @@ public class TaskTracker {
                 default:
                     System.out.println("Unrecognized command.\n");
                     System.out.println("Usage:");
-                    System.out.println("task-tracker add [description]");
-                    System.out.println("task-tracker update [id] [new_description]");
+                    System.out.println("task-tracker add [\"description\"]");
+                    System.out.println("task-tracker update [id] [\"new_description\"]");
                     System.out.println("task-tracker delete [id]");
                     System.out.println("task-tracker mark-in-progress [id]");
                     System.out.println("task-tracker mark-done [id]");
@@ -74,8 +74,8 @@ public class TaskTracker {
             }
         } else{
             System.out.println("Usage:");
-            System.out.println("task-tracker add [description]");
-            System.out.println("task-tracker update [id] [new_description]");
+            System.out.println("task-tracker add [\"description\"]");
+            System.out.println("task-tracker update [id] [\"new_description\"]");
             System.out.println("task-tracker delete [id]");
             System.out.println("task-tracker mark-in-progress [id]");
             System.out.println("task-tracker mark-done [id]");

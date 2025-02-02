@@ -25,10 +25,10 @@ ___
 
 ```
 # Add a task
-java TaskTracker add Do the housework
+java TaskTracker add "Do the housework"
 
 # Update a task
-java TaskTracker update 1 Do the housework and cook dinner
+java TaskTracker update 1 "Do the housework and cook dinner"
 
 # Delete a task
 java TaskTracker delete 1
