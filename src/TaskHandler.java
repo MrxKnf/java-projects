@@ -53,7 +53,7 @@ public class TaskHandler {
 
         Task task = new Task(status,description);
 
-        if (tasks.size() != 0){
+        if (!tasks.isEmpty()){
             task.id = JsonConverter.convertFromJson(tasks.get(tasks.size()-1)).id + 1;
         }
 
@@ -74,7 +74,7 @@ public class TaskHandler {
             e.printStackTrace();
         }
 
-        if (tasks.size() == 0){
+        if (tasks.isEmpty()){
             System.out.println("You have no tasks!");
             return;
         }
@@ -107,7 +107,7 @@ public class TaskHandler {
             e.printStackTrace();
         }
 
-        if (tasks.size() == 0){
+        if (tasks.isEmpty()){
             System.out.println("You have no tasks!");
             return;
         }
@@ -142,7 +142,7 @@ public class TaskHandler {
             e.printStackTrace();
         }
 
-        if (tasks.size() == 0){
+        if (tasks.isEmpty()){
             System.out.println("You have no tasks!");
             return;
         }
@@ -177,7 +177,7 @@ public class TaskHandler {
             e.printStackTrace();
         }
 
-        if (tasks.size() == 0){
+        if (tasks.isEmpty()){
             System.out.println("You have no tasks!");
             return;
         }
@@ -212,7 +212,7 @@ public class TaskHandler {
             e.printStackTrace();
         }
 
-        if (tasks.size() == 0){
+        if (tasks.isEmpty()){
             System.out.println("You have no tasks!");
             return;
         }
@@ -247,7 +247,7 @@ public class TaskHandler {
             e.printStackTrace();
         }
 
-        if (tasks.size() == 0){
+        if (tasks.isEmpty()){
             System.out.println("You have no tasks!");
             return;
         }
@@ -268,7 +268,7 @@ public class TaskHandler {
             e.printStackTrace();
         }
 
-        if (tasks.size() == 0){
+        if (tasks.isEmpty()){
             System.out.println("You have no tasks!");
             return;
         }
