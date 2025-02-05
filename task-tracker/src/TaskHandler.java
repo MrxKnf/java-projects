@@ -13,15 +13,12 @@ public class TaskHandler {
         if (!Files.exists(TASKS_FILE)){
             Files.createFile(TASKS_FILE);
             tasks = new ArrayList<>();
+        } else if(Files.readString(TASKS_FILE).equals("")) {
+            tasks = new ArrayList<String>();
         } else{
-            if(Files.readString(TASKS_FILE).equals("")){
-                tasks = new ArrayList<String>();
-            } else{
                 tasks = new ArrayList<>(Arrays.asList(Files.readString(TASKS_FILE).replaceAll("\\[|\\]","").split("},")));
                 removeBrackets();
-            }
         }
-
     }
 
     public static void storageTasks() throws IOException{

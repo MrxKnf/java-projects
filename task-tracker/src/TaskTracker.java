@@ -13,35 +13,35 @@ public class TaskTracker {
                 case "update":
                     try{
                        TaskHandler.updateTask(Integer.parseInt(args[1]),args[2]);
-                    } catch (IndexOutOfBoundsException e){
+                    } catch (IndexOutOfBoundsException | NumberFormatException e){
                         System.out.println("Usage: task-tracker update [id] [\"new_description\"]");
                     }
                     break;
                 case "delete":
                     try{
                         TaskHandler.deleteTask(Integer.parseInt(args[1]));
-                    } catch (IndexOutOfBoundsException e){
+                    } catch (IndexOutOfBoundsException | NumberFormatException e){
                         System.out.println("Usage: task-tracker delete [id]");
                     }
                     break;
                 case "mark-in-progress":
                     try{
                         TaskHandler.markInProgress(Integer.parseInt(args[1]));
-                    } catch (IndexOutOfBoundsException e){
+                    } catch (IndexOutOfBoundsException | NumberFormatException e){
                         System.out.println("Usage: task-tracker mark-in-progress [id]");
                     }
                     break;
                 case "mark-done":
                     try{
                         TaskHandler.markDone(Integer.parseInt(args[1]));
-                    } catch (IndexOutOfBoundsException e){
+                    } catch (IndexOutOfBoundsException | NumberFormatException e){
                         System.out.println("Usage: task-tracker mark-done [id]");
                     }
                     break;
                 case "mark-todo":
                     try{
                         TaskHandler.markPending(Integer.parseInt(args[1]));
-                    } catch (IndexOutOfBoundsException e){
+                    } catch (IndexOutOfBoundsException | NumberFormatException e){
                         System.out.println("Usage: task-tracker mark-todo [id]");
                     }
                     break;
