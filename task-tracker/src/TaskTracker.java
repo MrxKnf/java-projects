@@ -46,7 +46,6 @@ public class TaskTracker {
                     }
                     break;
                 case "list":
-
                     if (args.length == 2){
                         if (args[1].equals("todo")){
                             TaskHandler.listTasks(0);

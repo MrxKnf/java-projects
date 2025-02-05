@@ -9,6 +9,7 @@ public class TaskHandler {
     private static final Path TASKS_FILE = Path.of("tasks.json");
     private static ArrayList<String> tasks;
 
+    //Function to load tasks from JSON file
     public static void loadTasks() throws IOException {
         if (!Files.exists(TASKS_FILE)){
             Files.createFile(TASKS_FILE);
@@ -21,6 +22,7 @@ public class TaskHandler {
         }
     }
 
+    //Function to storage tasks in the JSON file
     public static void storageTasks() throws IOException{
         StringBuilder sb = new StringBuilder();
 
@@ -42,6 +44,7 @@ public class TaskHandler {
         Files.writeString(TASKS_FILE, sb.toString());
     }
 
+    //Function to remove "{}" after loading the tasks
     private static void removeBrackets(){
         for (int i = 0; i < tasks.size(); i++){
             String cleanTask = tasks.get(i).replaceAll("\\{|\\}", "");
