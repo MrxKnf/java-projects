@@ -18,6 +18,7 @@ public class TaskHandler {
                 tasks = new ArrayList<String>();
             } else{
                 tasks = new ArrayList<>(Arrays.asList(Files.readString(TASKS_FILE).replaceAll("\\[|\\]","").split("},")));
+                removeBrackets();
             }
         }
 
@@ -33,21 +34,23 @@ public class TaskHandler {
 
         sb.append("[");
         for (int i = 0; i < tasks.size(); i++) {
-            if (i == tasks.size() - 1){
-                if (!tasks.get(i).endsWith("}")){
-                    sb.append(tasks.get(i) + "}" + "]");
-                } else{
-                    sb.append(tasks.get(i) + "]");
-                }
-            } else{
-                if (!tasks.get(i).endsWith("}")){
-                    sb.append(tasks.get(i) + "}" + ",");
-                } else{
-                    sb.append(tasks.get(i) + ",");
-                }
+            sb.append("{");
+            sb.append(tasks.get(i));
+            sb.append("}");
+            if (i != tasks.size() - 1){
+                sb.append(",");
             }
         }
+        sb.append("]");
         Files.writeString(TASKS_FILE, sb.toString());
+    }
+
+    private static void removeBrackets(){
+        for (int i = 0; i < tasks.size(); i++){
+            String cleanTask = tasks.get(i).replaceAll("\\{|\\}", "");
+            tasks.remove(i);
+            tasks.add(i, cleanTask);
+        }
     }
 
     public static void addTask(int status, String description){

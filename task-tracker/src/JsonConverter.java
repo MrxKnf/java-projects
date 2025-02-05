@@ -1,12 +1,10 @@
 public class JsonConverter {
     public static String convertToJson(Task task){
-        return "{" +
-                "\"id\":" + task.id + "," +
+        return "\"id\":" + task.id + "," +
                 "\"status\"" + ":" + task.status +  "," +
                 "\"description\":" + "\"" + task.description + "\"" +  "," +
                 "\"createdAt\":" + "\"" + task.createdAt + "\"" + "," +
-                "\"updatedAt\":" + "\"" + task.updatedAt + "\"" +
-                "}";
+                "\"updatedAt\":" + "\"" + task.updatedAt + "\"";
     }
 
     public static Task convertFromJson(String json){
