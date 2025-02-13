@@ -10,24 +10,24 @@ public class TaskHandler {
     private static ArrayList<String> tasks;
 
     //Function to load tasks from JSON file
-    public static void loadTasks() throws IOException {
+    public static void loadTasks(){
         if (!Files.exists(TASKS_FILE)){
-            Files.createFile(TASKS_FILE);
+            FileHandling.createFile(TASKS_FILE);
             tasks = new ArrayList<>();
-        } else if(Files.readString(TASKS_FILE).equals("")) {
+        } else if(FileHandling.readString(TASKS_FILE).equals("")) {
             tasks = new ArrayList<String>();
         } else{
-                tasks = new ArrayList<>(Arrays.asList(Files.readString(TASKS_FILE).replaceAll("\\[|\\]","").split("},")));
+                tasks = new ArrayList<>(Arrays.asList(FileHandling.readString(TASKS_FILE).replaceAll("\\[|\\]","").split("},")));
                 removeBrackets();
         }
     }
 
     //Function to storage tasks in the JSON file
-    public static void storageTasks() throws IOException{
+    public static void storageTasks(){
         StringBuilder sb = new StringBuilder();
 
         if (tasks.isEmpty()){
-            Files.writeString(TASKS_FILE,"");
+            FileHandling.writeString(TASKS_FILE,"");
             return;
         }
 
@@ -41,7 +41,7 @@ public class TaskHandler {
             }
         }
         sb.append("]");
-        Files.writeString(TASKS_FILE, sb.toString());
+        FileHandling.writeString(TASKS_FILE, sb.toString());
     }
 
     //Function to remove "{}" after loading the tasks
@@ -54,12 +54,7 @@ public class TaskHandler {
     }
 
     public static void addTask(int status, String description){
-        try{
-            loadTasks();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        loadTasks();
         Task task = new Task(status,description);
 
         if (!tasks.isEmpty()){
@@ -67,22 +62,12 @@ public class TaskHandler {
         }
 
         tasks.add(JsonConverter.convertToJson(task));
-
-        try{
-            storageTasks();
-            System.out.println("Task added succesfully! (ID: " + task.id + ")");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        storageTasks();
+        System.out.println("Task added succesfully! (ID: " + task.id + ")");
     }
 
     public static void deleteTask(int id){
-        try{
-            loadTasks();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        loadTasks();
         if (tasks.isEmpty()){
             System.out.println("You have no tasks!");
             return;
@@ -99,23 +84,12 @@ public class TaskHandler {
                 return;
             }
         }
-
-        try {
-            storageTasks();
-            System.out.println("Task deleted succesfully!");
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        storageTasks();
+        System.out.println("Task deleted succesfully!");
     }
 
     public static void updateTask(int id, String newDescription){
-        try{
-            loadTasks();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        loadTasks();
         if (tasks.isEmpty()){
             System.out.println("You have no tasks!");
             return;
@@ -135,22 +109,13 @@ public class TaskHandler {
                 return;
             }
         }
+        storageTasks();
+        System.out.println("Task description updated succesfully!");
 
-        try{
-            storageTasks();
-            System.out.println("Task description updated succesfully!");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     public static void markInProgress(int id){
-        try{
-            loadTasks();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        loadTasks();
         if (tasks.isEmpty()){
             System.out.println("You have no tasks!");
             return;
@@ -170,22 +135,13 @@ public class TaskHandler {
                 return;
             }
         }
+        storageTasks();
+        System.out.println("Task status updated succesfully!");
 
-        try{
-            storageTasks();
-            System.out.println("Task status updated succesfully!");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     public static void markDone(int id){
-        try{
-            loadTasks();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        loadTasks();
         if (tasks.isEmpty()){
             System.out.println("You have no tasks!");
             return;
@@ -205,22 +161,12 @@ public class TaskHandler {
                 return;
             }
         }
-
-        try{
-            storageTasks();
-            System.out.println("Task status updated succesfully!");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        storageTasks();
+        System.out.println("Task status updated succesfully!");
     }
 
     public static void markPending(int id){
-        try{
-            loadTasks();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        loadTasks();
         if (tasks.isEmpty()){
             System.out.println("You have no tasks!");
             return;
@@ -240,22 +186,12 @@ public class TaskHandler {
                 return;
             }
         }
-
-        try{
-            storageTasks();
-            System.out.println("Task status updated succesfully!");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        storageTasks();
+        System.out.println("Task status updated succesfully!");
     }
 
     public static void listTasks(int status){
-        try{
-            loadTasks();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        loadTasks();
         if (tasks.isEmpty()){
             System.out.println("You have no tasks!");
             return;
@@ -271,12 +207,7 @@ public class TaskHandler {
     }
 
     public static void listAllTasks(){
-        try{
-            loadTasks();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        loadTasks();
         if (tasks.isEmpty()){
             System.out.println("You have no tasks!");
             return;
