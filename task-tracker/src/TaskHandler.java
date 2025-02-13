@@ -14,8 +14,8 @@ public class TaskHandler {
         if (!Files.exists(TASKS_FILE)){
             FileHandling.createFile(TASKS_FILE);
             tasks = new ArrayList<>();
-        } else if(FileHandling.readString(TASKS_FILE).equals("")) {
-            tasks = new ArrayList<String>();
+        } else if(FileHandling.readString(TASKS_FILE).isEmpty()) {
+            tasks = new ArrayList<>();
         } else{
                 tasks = new ArrayList<>(Arrays.asList(FileHandling.readString(TASKS_FILE).replaceAll("\\[|\\]","").split("},")));
                 removeBrackets();
